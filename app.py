@@ -15,7 +15,7 @@ if 'index' not in st.session_state:
     st.session_state.index = create_index()
 
 # Initialize Groq client
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+client = Groq(api_key=st.secrets.get("GROQ_API_KEY"))
 
 # Initialize chat history
 if "messages" not in st.session_state:
